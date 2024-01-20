@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <title>
+            Mushroom Classification
+        </title>
+        <style>
+            .navbar {
+            
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: black;
+            background-image:  url("D://Naan mudhalvan AI//mushroom_background_image.jpg");
+          }
+    
+          /* Style the links in the navigation bar */
+          .navbar a {
+            color: white;
+            float: right;
+            
+            padding: 15px;
+            text-decoration: none;
+          }
+          body{
+            background-color:#CC5500;
+          }
+          .content{
+            color:white;
+        font-size: 1em;
+        margin:0;
+        padding:0;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+        position:absolute;
+        top:42%;
+        left:50%;
+        transform:translateX(-50%) translateY(-50%);        
+        
+      }
+      .project{
+        color:white;
+        font-size: 1em;
+        margin:0;
+        padding:0;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+        position:absolute;
+        top:62%;
+        left:50%;
+        transform:translateX(-50%) translateY(-50%); 
+      }
+      hr{
+        width: 30px;
+        border: 2px solid white;
+        
+        
+        
+      }
+      button{
+        background-color:white;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 30px/20px; /* this creates an oval shape */
+  cursor: pointer;
+
+      }
+      button{
+  text-align: center;
+}
+          </style>
+          </head>
+          <body>
+            <div class="navbar">
+                <a class="active" id="predict_but" href="#input.html">Predict</a>
+                <a  id="myBtnn" href="#images.html">Images</a>
+                <a id="myBtnn" href="#about_mushroom.html">About</a>
+              </div>
+
+              <div class="content">
+        <h1>Mushrooms</h1>
+        <hr>
+           </div>
+           <div class="project">
+      <p id="p1">
+            A mushroom or toadstool is the fleshy,spore-bearing fruiting, body of fungus,typically produced<br>
+            above ground, on soil, or on its food source. Toadstool generally denotes one poisnous to humans
+    </p>
+    <button id="myBtn">SOME MUSHROOM IMAGES</button>
+    <script>
+      document.getElementById("myBtn").addEventListener("click", function() {
+        window.location.href = "/mushroomImages";
+      });
+      document.getElementById("myBtnn").addEventListener("click", function() {
+        window.location.href = "/mushroomImages";
+      });
+      document.getElementById("predict_but").addEventListener("click", function() {
+        window.location.href = "/input";
+      });
+    </script>
+           </div>
+          </body>
+          </html>
+          

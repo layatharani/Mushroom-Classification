@@ -1,0 +1,126 @@
+<html>
+<head>
+    <title>
+        Mushroom Classification
+    </title>
+    <style>
+        .navbar {
+        
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: black;
+      }
+
+      /* Style the links in the navigation bar */
+      .navbar a {
+        color: white;
+        float: right;
+        
+        padding: 15px;
+        text-decoration: none;
+      }
+
+      /* Style the active link */
+      
+      
+         body{
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+          background-image: url({{url_for('static',filename='mushroom_background.jpg')}});
+        }
+       .content{
+        font-size: 3em;
+        margin:0;
+        padding:0;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+        position:absolute;
+        top:42%;
+        left:50%;
+        transform:translateX(-50%) translateY(-50%);        
+        
+      }
+      .project{
+        font-size: 1em;
+        margin:0;
+        padding:0;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+        position:absolute;
+        top:62%;
+        left:50%;
+        transform:translateX(-50%) translateY(-50%); 
+      }
+      button{
+        background-color: orange;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 30px/20px; /* this creates an oval shape */
+  cursor: pointer;
+
+      }
+      hr{
+        width: 30px;
+        border: 2px solid orange;
+        
+        
+        color: orange;
+      }
+     p{
+        text-align: center;
+     }
+     #p1{
+      text-align: center;
+     }
+  button{
+  text-align: center;
+}
+    </style>
+</head>
+<body>
+    <div class="image">
+      
+      <h1></h1>
+    </div>
+<div class="navbar">
+      <a class="active" id="predict_but" href="#input.html">Predict</a>
+      <a id="myB" href="#images.html">Images</a>
+      <a id="myBtn" href="#about_mushroom.html">About</a>
+    </div>
+    <div class="content">
+        <p>Mushroom Classification <br>
+        Using Transfer Learning</p>
+        <hr>
+           </div>
+           <div class="project">
+      <p id="p1">
+            Through this project we will able to classify various types of Mushrooms
+    </p><br>
+    <button id="myBtnn">ABOUT MUSHROOMS</button>
+    <script>
+      document.getElementById("myBtnn").addEventListener("click", function() {
+        window.location.href = "/redirect";
+      });
+      document.getElementById("myBtn").addEventListener("click", function() {
+        window.location.href = "/redirect";
+      });
+      
+      document.getElementById("myB").addEventListener("click", function() {
+        window.location.href = "/mushroomImages";
+      });
+      document.getElementById("predict_but").addEventListener("click", function() {
+        window.location.href = "/input";
+      });
+    </script>
+           </div>
+           
+</body>
+</html>

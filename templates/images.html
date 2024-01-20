@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Names</title>
+    <style>
+      .navbar {
+        
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: orange;
+      }
+
+      /* Style the links in the navigation bar */
+      .navbar a {
+        color: white;
+        float: right;
+        
+        padding: 15px;
+        text-decoration: none;
+      }
+      .content{
+        font-size: 3em;
+        margin:0;
+        padding:0;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+        position:absolute;
+        top:42%;
+        left:50%;
+        transform:translateX(-50%) translateY(-50%);        
+        
+      }
+      hr{
+        width: 30px;
+        border: 2px solid orange;
+             
+             }
+             
+             body {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-gap: 20px;
+            align-content: flex-end;
+            height: 100vh;
+            margin: 0;
+            padding: 10px;
+        }
+
+        .image-container {
+          position: relative;
+            display: inline-block;
+        }
+        
+        
+
+        .image-container:hover::before {
+            content: attr(data-name);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(180, 119, 27, 0.5);
+            color: #fff;
+            padding: 5px;
+            font-size: 12px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        
+        #image-name{
+          text-align: center;
+        }
+
+        .image-container:hover::before {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+  <div class="navbar">
+    <a class="active" id="predict_but" href="#input.html">Predict</a>
+    <a id="myBtn" href="#about_mushroom.html">About</a>
+    </div>
+    <div class="content">
+      <p>images</p><br>
+      <hr>
+         </div>
+    <div class="image-container" id="image_name" data-name="Boletus">
+        <img src="{{ url_for('static', filename='mushroom1.jpg') }}" alt="Image 1">
+    </div>
+
+    <div class="image-container" id="image_name" data-name="Lactarius Indigo">
+        <img src="{{ url_for('static', filename='mushroom2.jpg') }}" alt="Image 2">
+    </div>
+
+    <div class="image-container" id="image_name" data-name="Lactarius">
+        <img src="{{ url_for('static', filename='mushroom3.jpg') }}" alt="Image 3">
+    </div>
+    <script>
+      document.getElementById("myBtn").addEventListener("click", function() {
+        window.location.href = "/redirect";
+      });
+      document.getElementById("predict_but").addEventListener("click", function() {
+        window.location.href = "/input";
+      });
+    </script>
+</body>
+</html>
